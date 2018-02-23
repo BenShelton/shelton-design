@@ -1,6 +1,6 @@
 # Shelton Design
 
-Company website hosted at [https://sheltondesign.co.uk](sheltondesign.co.uk) & built using Vue.js
+Company website hosted at [sheltondesign.co.uk](https://sheltondesign.co.uk) & built using Vue.js
 
 ## Build Setup
 
