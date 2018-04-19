@@ -45,9 +45,10 @@ export default {
   computed: {
     lineStyle () {
       const ref = this.$refs[this.$route.name]
-      if (!this.lineReady || !ref) return { left: '110%', width: '0' }
+      if (!this.lineReady || !ref) return { top: '45px', left: '110%', width: '0' }
       const rect = ref[0].$el.getBoundingClientRect()
       return {
+        top: (window.pageYOffset + (rect.bottom - (rect.height * 0.2))) + 'px',
         left: rect.left + 'px',
         width: rect.width + 'px'
       }
@@ -68,8 +69,7 @@ export default {
 
 <style lang="sass" scoped>
 #nav-bar
-  height: 120px
-  width: 100%
+  flex: 0 0 120px
   display: grid
   grid-template-columns: 200px 1fr 80px 80px 80px
   grid-template-rows: 60px 60px
@@ -90,7 +90,7 @@ export default {
   height: 2px
   width: 0
   background: #0d1e7c
-  transition: left 0.4s ease, width 0.4s ease
+  transition: top 0.4s ease, left 0.4s ease, width 0.4s ease
 a
   display: flex
   align-items: center
@@ -98,7 +98,7 @@ a
   width: 100%
   height: 100%
   text-decoration: none
-  color: #333
+  color: #333333
   transition: color 0.6s ease
   &.router-link-active
     color: #0d1e7c
@@ -106,4 +106,9 @@ a
 img
   width: 100%
   height: 100%
+@media screen and (max-width: 480px)
+  #nav-bar
+      grid-template-columns: 200px 1fr 80px
+      grid-template-rows: 40px 40px 40px
+      grid-template-areas: "logo . link1" "logo . link2" "logo . link3"
 </style>

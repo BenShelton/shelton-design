@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <nav-bar/>
+    <nav-bar />
     <transition name="fade">
-      <router-view/>
+      <router-view />
     </transition>
   </div>
 </template>
@@ -16,7 +16,11 @@ export default {
 </script>
 
 <style lang="sass">
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons')
 #app
+  display: flex
+  flex-flow: column nowrap
+  min-height: 100vh
   font-family: 'Avenir', Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
