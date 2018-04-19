@@ -29,8 +29,8 @@ export default {
       lineToggle: false,
       resizeTimeout: 0,
       links: [
-        { to: 'about', name: 'About' },
         { to: 'projects', name: 'Projects' },
+        { to: 'about', name: 'About' },
         { to: 'contact', name: 'Contact' }
       ]
     }
