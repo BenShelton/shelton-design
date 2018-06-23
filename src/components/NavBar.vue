@@ -1,5 +1,8 @@
 <template>
-  <div id="nav-bar">
+  <div
+    id="nav-bar"
+    v-if="showNav"
+  >
     <div
       id="line"
       :style="lineStyle"
@@ -43,6 +46,9 @@ export default {
     window.removeEventListener('resize', this.handleResize)
   },
   computed: {
+    showNav () {
+      return !this.$route.meta.private
+    },
     lineStyle () {
       const ref = this.$refs[this.$route.name]
       if (!this.lineReady || !ref) return { top: '45px', left: '110%', width: '0' }
